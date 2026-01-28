@@ -1,0 +1,7 @@
+{
+  "name": "AgriBioSecure Portal",
+  "description": "A comprehensive biosecurity management platform for pig and poultry farmers, featuring health monitoring, compliance tracking, and AI-driven expert guidance.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
