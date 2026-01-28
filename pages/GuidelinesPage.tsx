@@ -8,7 +8,7 @@ import { MOCK_GUIDELINES } from '../constants';
 import { GeminiService } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
-const GuidelinesPage = () => {
+export default function GuidelinesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState<'All' | 'Pig' | 'Poultry' | 'General'>('All');
   const [chatInput, setChatInput] = useState('');
@@ -195,6 +195,4 @@ const GuidelinesPage = () => {
       </div>
     </div>
   );
-};
-
-export default GuidelinesPage;
+}

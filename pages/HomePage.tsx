@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Activity, GraduationCap, ChevronRight, CheckCircle } from 'lucide-react';
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
@@ -93,6 +93,4 @@ const HomePage = () => {
       </section>
     </div>
   );
-};
-
-export default HomePage;
+}

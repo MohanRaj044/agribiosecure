@@ -26,3 +26,29 @@ export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
 }
+
+export interface LivestockData {
+  pigs: {
+    count: number;
+    lastVaccination: string;
+    healthNote: string;
+  };
+  hens: {
+    count: number;
+    lastVaccination: string;
+    healthNote: string;
+  };
+}
+
+export interface AIReport {
+  summary: string;
+  healthStatus: 'Excellent' | 'Good' | 'Fair' | 'Critical';
+  alerts: string[];
+  recommendations: string[];
+  overallScore: number;
+  dataInsights: {
+    category: string;
+    observation: string;
+    riskLevel: 'Low' | 'Medium' | 'High';
+  }[];
+}

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 
-const ContactPage = () => {
+export default function ContactPage() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -149,6 +149,4 @@ const ContactPage = () => {
       </div>
     </div>
   );
-};
-
-export default ContactPage;
+}

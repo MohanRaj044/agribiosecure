@@ -17,7 +17,7 @@ const FeatureCard = ({ title, icon: Icon, description }: any) => (
   </div>
 );
 
-const FeaturesPage = () => {
+export default function FeaturesPage() {
   const [checklist, setChecklist] = useState<ChecklistItem[]>(INITIAL_CHECKLIST);
 
   const toggleTask = (id: string) => {
@@ -130,6 +130,4 @@ const FeaturesPage = () => {
       </div>
     </div>
   );
-};
-
-export default FeaturesPage;
+}

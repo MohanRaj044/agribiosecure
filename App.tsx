@@ -108,7 +108,7 @@ const Footer = () => (
   </footer>
 );
 
-function App() {
+export default function App() {
   return (
     <HashRouter>
       <div className="min-h-screen flex flex-col bg-[#fdfcfb]">
@@ -127,5 +127,3 @@ function App() {
     </HashRouter>
   );
 }
-
-export default App;
