@@ -44,9 +44,21 @@ export class GeminiService {
         HEN DATA: Count: ${data.hens.count}, Last Vax: ${data.hens.lastVaccination || 'None'}, Notes: ${data.hens.healthNote || 'None'}
         
         Today is ${new Date().toLocaleDateString()}.
-        Compare the vaccination dates to today. If older than 6 months, flag it.
-        Evaluate the health notes for disease red flags.
-        Assess density risks based on the animal counts.`;
+        
+        CRITICAL INSTRUCTIONS FOR dataInsights:
+        You MUST provide specific items in the dataInsights array for each sub-field.
+        Use these EXACT categories for mapping to UI colors:
+        - "Pigs Population"
+        - "Pigs Vaccination"
+        - "Pigs Observation"
+        - "Hens Population"
+        - "Hens Vaccination"
+        - "Hens Observation"
+
+        For each category, determine riskLevel (Low, Medium, High) based on:
+        - Vaccination: High risk if > 6 months old or missing.
+        - Population: High risk if numbers are abnormally high for standard pen sizes or sudden changes.
+        - Observation: High risk if notes mention lethargy, coughing, high mortality, or appetite loss.`;
 
       const response = await this.ai.models.generateContent({
         model: 'gemini-3-flash-preview',
@@ -66,8 +78,8 @@ export class GeminiService {
                 items: {
                   type: Type.OBJECT,
                   properties: {
-                    category: { type: Type.STRING, description: "e.g., Vaccination, Population, Observation" },
-                    observation: { type: Type.STRING, description: "Data-specific finding referring to user numbers" },
+                    category: { type: Type.STRING },
+                    observation: { type: Type.STRING },
                     riskLevel: { type: Type.STRING, description: "Low, Medium, or High" }
                   },
                   required: ["category", "observation", "riskLevel"]

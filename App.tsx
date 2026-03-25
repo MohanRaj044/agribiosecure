@@ -9,13 +9,15 @@ import {
   Phone, 
   Menu, 
   X,
-  Sprout
+  Sprout,
+  Zap
 } from 'lucide-react';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
 import FeaturesPage from './pages/FeaturesPage';
 import GuidelinesPage from './pages/GuidelinesPage';
 import ContactPage from './pages/ContactPage';
+import ArchitecturePage from './pages/ArchitecturePage';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +28,7 @@ const Navbar = () => {
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Features', path: '/features', icon: ShieldCheck },
     { name: 'Guidelines', path: '/guidelines', icon: BookOpen },
+    { name: 'Architecture', path: '/architecture', icon: Zap },
     { name: 'Contact', path: '/contact', icon: Phone },
   ];
 
@@ -119,6 +122,7 @@ export default function App() {
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/guidelines" element={<GuidelinesPage />} />
+            <Route path="/architecture" element={<ArchitecturePage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
